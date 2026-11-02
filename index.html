@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SilvaApps — Bots para Discord</title>
+<style>
+:root{--bg:#080711;--purple:#7426ff;--blue:#183cff;--text:#f7f5ff;--muted:#b6afcb;--line:#30234d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 35%,#21104b 0,transparent 42%),var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.nav{height:82px;border-bottom:1px solid #ffffff14;display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;background:#080711e8;backdrop-filter:blur(14px);z-index:5}
+.brand{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:800;letter-spacing:-1px}.logo{font-size:40px;line-height:1;color:#2447ff;text-shadow:0 0 22px #2447ff66}.brand em{color:#5472ff;font-style:normal}
+.links{display:flex;gap:28px;align-items:center;color:#c4bed9;font-weight:600}.links a:hover{color:#8194ff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:14px;padding:14px 21px;background:linear-gradient(110deg,#1738ff,#6540ff);box-shadow:0 8px 28px #243bff35;font-weight:700;border:1px solid #8b9cff55;transition:.2s}.btn:hover{transform:translateY(-2px)}.outline{background:#100c20;border-color:#7775b4;box-shadow:none}
+.hero{max-width:1480px;margin:auto;padding:60px 5% 70px;min-height:610px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:38px;overflow:hidden}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid #374dff;border-radius:30px;padding:11px 17px;color:#e1e4ff;background:#101331;font-size:14px;font-weight:700}.dot{width:11px;height:11px;border-radius:50%;background:#3455ff;box-shadow:0 0 18px #3455ff}
+h1{font-size:clamp(42px,4.1vw,68px);line-height:1.05;letter-spacing:-2px;margin:22px 0 18px;font-weight:800}h1 em{font-style:normal;color:#5874ff}.intro{font-size:19px;line-height:1.55;color:#b9b2d2;max-width:610px;margin:0 0 27px}.actions{display:flex;gap:14px;flex-wrap:wrap}
+.features{display:flex;gap:0;margin-top:34px;flex-wrap:wrap}.feature{display:flex;align-items:center;gap:9px;padding:0 14px;border-right:1px solid #44365a;color:#c8c0dc;font-size:13px;line-height:1.4}.feature:first-child{padding-left:0}.feature:last-child{border:0}.feature b{font-size:23px;color:#6c83ff}
+.banner-wrap{position:relative;padding:10px;border-radius:22px;background:linear-gradient(135deg,#263fff88,#9c54ff44);box-shadow:0 20px 70px #1f31ff26;transform:rotate(1deg)}.banner-wrap:before{content:"";position:absolute;inset:-18px;border-radius:30px;background:#243bff20;filter:blur(30px);z-index:-1}
+.banner{display:block;width:100%;height:auto;aspect-ratio:1648/928;object-fit:cover;border-radius:15px;border:1px solid #ffffff28}
+.banner-caption{position:absolute;bottom:22px;right:22px;padding:10px 14px;border-radius:12px;background:#090916d9;border:1px solid #ffffff25;color:#f3f4ff;font-size:12px;font-weight:700;letter-spacing:.4px}
+.section{max-width:1250px;margin:auto;padding:42px 5% 78px}.section h2{text-align:center;font-size:34px;letter-spacing:-1px}.section h2 em{color:#6f85ff;font-style:normal}.sub{text-align:center;color:var(--muted);font-size:16px;margin-top:-7px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;margin-top:34px}.card{border:1px solid var(--line);background:linear-gradient(145deg,#151126,#0c0a16);border-radius:18px;padding:23px}.ico{font-size:27px;background:#171b43;border:1px solid #303c9b;border-radius:12px;width:54px;height:54px;display:grid;place-items:center}.card h3{font-size:18px;margin:17px 0 8px}.card p{color:var(--muted);line-height:1.55;font-size:14px;margin:0}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:17px;margin-top:32px}.price{color:#8394ff;font-size:20px;font-weight:800;margin:18px 0}.card .btn{width:100%;padding:12px;border-radius:11px;font-size:14px}
+.support-options{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}.modal-backdrop{display:none;position:fixed;inset:0;background:#05030bdc;z-index:20;align-items:center;justify-content:center;padding:18px}.modal-backdrop.open{display:flex}.support-modal{width:min(100%,520px);background:#100c20;border:1px solid #49356e;border-radius:20px;padding:24px;box-shadow:0 25px 80px #0009}.support-modal h2{margin:0 0 8px}.support-modal p{color:var(--muted);line-height:1.5}.support-choice{display:flex;gap:13px;align-items:center;width:100%;text-align:left;margin-top:12px;padding:16px;border-radius:14px;border:1px solid #49356e;background:#171126;color:var(--text);cursor:pointer;font:inherit}.support-choice:hover{border-color:#9a69ff;background:#211638}.support-choice strong{display:block;margin-bottom:4px}.support-choice small{color:var(--muted)}.chat-box{display:none;margin-top:18px}.chat-box.open{display:block}.chat-log{height:180px;overflow:auto;border:1px solid #30234d;border-radius:12px;padding:12px;margin:12px 0;color:var(--text);background:#080711}.chat-input{width:100%;background:#080711;color:var(--text);border:1px solid #49356e;border-radius:10px;padding:12px;font:inherit}.chat-row{display:flex;gap:8px;margin-top:8px}.chat-row .btn{cursor:pointer}.close-modal{float:right;background:transparent;color:#c4bed9;border:0;font-size:25px;cursor:pointer}.cta{margin:0 auto 75px;max-width:1100px;width:90%;text-align:center;padding:48px 24px;border:1px solid #3440a0;border-radius:24px;background:radial-gradient(ellipse at 50% 0,#293d703d,transparent 65%),#100d1c}.cta h2{font-size:34px;margin:0 0 12px}.cta p{color:var(--muted);margin:0 0 24px}footer{border-top:1px solid #ffffff17;padding:28px 5%;color:#8982a1;text-align:center;font-size:13px}
+@media(max-width:950px){.nav{padding:0 4%}.links{gap:14px}.hero{grid-template-columns:1fr;padding-top:45px}.banner-wrap{max-width:760px;width:100%;margin:8px auto 0}.cards,.plans{grid-template-columns:repeat(2,1fr)}.feature{margin:7px 0}}
+@media(max-width:560px){.brand{font-size:21px}.logo{font-size:32px}.nav>.btn{padding:11px;font-size:11px}.links{display:none}.hero{padding:36px 6% 44px;gap:28px}h1{font-size:42px;letter-spacing:-1.3px}.intro{font-size:17px}.features{margin-top:25px}.feature{padding:0 9px;font-size:11px}.cards,.plans{grid-template-columns:1fr}.section h2,.cta h2{font-size:28px}.banner-caption{bottom:14px;right:14px}.section{padding-top:32px}}
+</style>
+</head>
+<body>
+<header class="nav">
+ <a class="brand" href="#"><span class="logo">S</span> Silva<em>Apps</em></a>
+ <nav class="links"><a href="#">⌂ &nbsp;Início</a><a href="#recursos">★ &nbsp;Recursos</a><a href="#planos">◇ &nbsp;Planos</a><a href="#suporte">♧ &nbsp;Suporte</a></nav>
+ <a class="btn" href="https://discord.gg/zC5RbHxjHA" target="_blank" rel="noopener">☁ Entrar no Discord</a>
+</header>
+<main>
+<section class="hero">
+ <div>
+  <span class="eyebrow"><span class="dot"></span> Bots de vendas para Discord</span>
+  <h1>Automatize as vendas do seu servidor com a <em>SilvaApps!</em></h1>
+  <p class="intro">Bots de vendas, tickets e pagamentos Pix para o seu servidor do Discord. Loja, entrega automática e suporte em um só lugar.</p>
+  <div class="actions"><a class="btn" href="https://discord.gg/zC5RbHxjHA" target="_blank" rel="noopener">☁ Entrar no Discord →</a><a class="btn outline" href="#planos">🛒 Ver Planos</a></div>
+  <div class="features"><div class="feature"><b>ϟ</b><span>Entrega<br>Automática</span></div><div class="feature"><b>⬟</b><span>Seguro e<br>Confiável</span></div><div class="feature"><b>▤</b><span>Pagamento<br>via Pix</span></div><div class="feature"><b>♧</b><span>Suporte<br>Especializado</span></div></div>
+ </div>
+ <div class="banner-wrap"><img class="banner" src="silva-banner.png" alt="Banner da marca Silva com letras pretas e azuis em fundo texturizado"><div class="banner-caption">SILVAAPPS • DISCORD BOTS</div></div>
+</section>
+<section class="section" id="recursos"><h2>Por que escolher a <em>SilvaApps?</em></h2><p class="sub">Tudo que você precisa para vender com mais praticidade.</p><div class="cards">
+ <article class="card"><div class="ico">⚡</div><h3>Entrega automática</h3><p>O cliente paga e o bot entrega na hora, sem você precisar mexer em nada.</p></article>
+ <article class="card"><div class="ico">💳</div><h3>Pix sem enrolação</h3><p>Cobranças Pix geradas pelo bot. Pagamento confirmado, produto liberado.</p></article>
+ <article class="card"><div class="ico">🛡️</div><h3>Anti-raid e moderação</h3><p>Filtros, logs e ferramentas para ajudar a manter seu servidor organizado.</p></article>
+ <article class="card"><div class="ico">🤝</div><h3>Suporte de verdade</h3><p>Atendimento no Discord para ajudar você do primeiro contato ao pós-venda.</p></article>
+</div></section>
+<section class="section" id="planos"><h2>Conheça nossos <em>planos</em></h2><p class="sub">Escolha o bot ideal para o seu servidor.</p><div class="plans">
+ <article class="card"><div class="ico">🛒</div><h3>Bot de Vendas Pro</h3><p>Loja, carrinho, cupons, estoque e entrega automática.</p><div class="price">R$ 29,90/mês</div><a class="btn" href="https://discord.gg/zC5RbHxjHA" target="_blank" rel="noopener">Comprar</a></article>
+ <article class="card"><div class="ico">🎫</div><h3>Bot de Tickets</h3><p>Atendimento organizado com painéis e transcrição.</p><div class="price">R$ 14,90/mês</div><a class="btn" href="https://discord.gg/zC5RbHxjHA" target="_blank" rel="noopener">Comprar</a></article>
+ <article class="card"><div class="ico">💳</div><h3>Bot de Pagamentos Pix</h3><p>Cobranças Pix e liberação após confirmação do pagamento.</p><div class="price">R$ 19,90/mês</div><a class="btn" href="https://discord.gg/zC5RbHxjHA" target="_blank" rel="noopener">Comprar</a></article>
+ <article class="card"><div class="ico">🛡️</div><h3>Bot de Moderação</h3><p>Anti-spam, logs e cargos automáticos para seu servidor.</p><div class="price">R$ 9,90/mês</div><a class="btn" href="https://discord.gg/zC5RbHxjHA" target="_blank" rel="noopener">Comprar</a></article>
+</div></section>
+<section class="cta" id="suporte"><h2>Pronto para <em style="color:#6f85ff;font-style:normal">começar a vender?</em></h2><p>Entre no Discord para conhecer os bots e falar com o suporte.</p><div class="support-options"><button class="btn" type="button" onclick="openSupport()">Falar com a equipe →</button></div></section>
+</main>
+<div class="modal-backdrop" id="supportModal" role="dialog" aria-modal="true" aria-labelledby="supportTitle" onclick="if(event.target===this)closeSupport()">
+ <div class="support-modal">
+  <button class="close-modal" type="button" onclick="closeSupport()" aria-label="Fechar">×</button>
+  <h2 id="supportTitle">Como podemos ajudar?</h2><p>Escolha uma opção de suporte da SilvaApps.</p>
+  <button class="support-choice" type="button" onclick="showAIChat()"><span style="font-size:26px">✦</span><span><strong>Suporte IA</strong><small>Tire dúvidas com a inteligência artificial.</small></span></button>
+  <a class="support-choice" href="https://discord.gg/zC5RbHxjHA" target="_blank" rel="noopener"><span style="font-size:26px">☁</span><span><strong>Discord</strong><small>Abra o servidor de suporte atual.</small></span></a>
+  <div class="chat-box" id="aiChat"><p><strong>Suporte IA SilvaApps</strong></p><div class="chat-log" id="chatLog" aria-live="polite">Olá! Sou o suporte virtual da SilvaApps. Como posso ajudar?</div><form id="chatForm"><input class="chat-input" id="chatInput" placeholder="Digite sua pergunta..." autocomplete="off" required><div class="chat-row"><button class="btn" type="submit">Enviar</button><button class="btn outline" type="button" onclick="hideAIChat()">Voltar</button></div></form></div>
+ </div>
+</div>
+<script>
+function openSupport(){document.getElementById('supportModal').classList.add('open')}
+function closeSupport(){document.getElementById('supportModal').classList.remove('open')}
+function showAIChat(){document.getElementById('aiChat').classList.add('open');document.getElementById('chatInput').focus()}
+function hideAIChat(){document.getElementById('aiChat').classList.remove('open')}
+var chatHistory=[];
+function addChatLine(who,text){var line=document.createElement('p');var label=document.createElement('strong');label.textContent=who+': ';line.appendChild(label);line.appendChild(document.createTextNode(text));document.getElementById('chatLog').appendChild(line);document.getElementById('chatLog').scrollTop=document.getElementById('chatLog').scrollHeight;}
+document.getElementById('chatForm').addEventListener('submit',async function(e){
+ e.preventDefault();var input=document.getElementById('chatInput');var log=document.getElementById('chatLog');var send=this.querySelector('button[type="submit"]');var message=input.value.trim();if(!message)return;
+ addChatLine('Você',message);chatHistory.push({role:'user',content:message});input.value='';input.disabled=true;send.disabled=true;send.textContent='Enviando...';
+ try{var res=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:message,history:chatHistory.slice(-10)})});var data=await res.json();if(!res.ok)throw new Error(data.error||'Não foi possível responder agora.');var answer=data.reply||'Não consegui gerar uma resposta.';addChatLine('IA',answer);chatHistory.push({role:'assistant',content:answer});chatHistory=chatHistory.slice(-10);}
+ catch(err){addChatLine('Aviso',err.message==='Failed to fetch'?'Não consegui conectar ao servidor. Tente novamente em instantes.':err.message);}
+ finally{input.disabled=false;send.disabled=false;send.textContent='Enviar';input.focus();}
+});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSupport()});
+</script>
+<footer>© 2026 SilvaApps — Todos os direitos reservados</footer>
+</body></html>

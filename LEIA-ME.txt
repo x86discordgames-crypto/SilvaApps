@@ -1,0 +1,22 @@
+SILVAAPPS — SITE COM SUPORTE IA REAL
+
+O site usa Node.js + Express. A chave da OpenAI fica SOMENTE na variável de ambiente OPENAI_API_KEY do serviço de hospedagem. Nunca coloque a chave no HTML, no GitHub ou neste arquivo.
+
+DEPLOY SUGERIDO (Render + GitHub)
+1. Extraia este ZIP numa pasta.
+2. Envie os arquivos desta pasta para um repositório GitHub. Pode ser privado.
+3. No Render, crie um Web Service conectado ao repositório.
+4. Build Command: npm install
+5. Start Command: npm start
+6. Em Environment, adicione OPENAI_API_KEY como chave e cole o valor da API no campo Value. Não compartilhe esse valor.
+7. (Opcional) adicione OPENAI_MODEL = gpt-4.1-mini.
+8. Salve e aguarde o deploy terminar. Abra a URL onrender.com fornecida pelo Render e teste Suporte IA.
+
+SEGURANÇA E CUSTOS
+- Não commite nem envie o arquivo .env.
+- A chave é guardada nas variáveis secretas do servidor, nunca no navegador.
+- A API da OpenAI pode ter cobrança separada do ChatGPT. Configure limites de gastos/alertas no painel da API e peça a um responsável para ajudar com cobrança e hospedagem.
+- O limite de 12 mensagens por minuto é básico, não é um limite global de gastos.
+- O plano gratuito da hospedagem pode adormecer após inatividade e demorar para acordar.
+
+O site só pode responder quando o serviço estiver publicado e a chave estiver corretamente configurada no painel de hospedagem.
